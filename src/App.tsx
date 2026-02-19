@@ -15,12 +15,6 @@ function App() {
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [selectedBrand, setSelectedBrand] = useState<string | null>(null);
 
-  const brand: Brand = { id: 1, name: "BrandName", logo: "logo.png", discount: "10%", productCount: 100, featured: true };
-
-  const setBrand = (brand: { id: number; name: string; logo: string; discount: string; productCount: number; featured: boolean; }) => {
-    // ...existing code...
-  };
-
   return (
     <ErrorBoundary>
       <div className="min-h-screen bg-gray-100 flex flex-col">
