@@ -1,5 +1,6 @@
 import { ArrowLeft, Star, Box, Tag, Shield } from 'lucide-react';
-import { Brand } from '../types';
+import { Brand } from '../../../types';
+import LazyImage from '../../common/LazyImage';
 
 interface BrandProductPageProps {
   brand: Brand;
@@ -11,7 +12,7 @@ const BrandProductPage = ({ brand, onBack }: BrandProductPageProps) => {
     <div className="bg-gray-100 min-h-screen">
       <div className="max-w-7xl mx-auto px-4 py-8">
         {/* Back Button */}
-        <button 
+        <button
           onClick={onBack}
           className="flex items-center gap-2 text-[#2874f0] mb-6 hover:underline"
         >
@@ -23,10 +24,11 @@ const BrandProductPage = ({ brand, onBack }: BrandProductPageProps) => {
         <div className="bg-white rounded-lg shadow-sm p-6 mb-8">
           <div className="flex items-center gap-6">
             <div className="w-32 h-32 rounded-lg overflow-hidden">
-              <img 
-                src={brand.logo} 
+              <LazyImage
+                src={brand.logo}
                 alt={brand.name}
                 className="w-full h-full object-cover"
+                wrapperClassName="w-full h-full"
               />
             </div>
             <div>
@@ -73,12 +75,15 @@ const BrandProductPage = ({ brand, onBack }: BrandProductPageProps) => {
           </div>
         </div>
 
-        {/* Product Categories */}
+        {/* Popular Categories */}
         <div className="bg-white rounded-lg shadow-sm p-6">
           <h2 className="text-xl font-bold mb-6">Popular Categories</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {['Mobiles', 'Laptops', 'Accessories', 'Wearables'].map((category) => (
-              <div key={category} className="bg-gray-50 p-4 rounded-lg cursor-pointer hover:shadow-md transition-shadow">
+              <div
+                key={category}
+                className="bg-gray-50 p-4 rounded-lg cursor-pointer hover:shadow-md transition-shadow"
+              >
                 <h3 className="font-medium mb-1">{category}</h3>
                 <p className="text-sm text-gray-600">Starting from ₹499</p>
               </div>

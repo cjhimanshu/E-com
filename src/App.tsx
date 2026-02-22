@@ -1,19 +1,19 @@
 import { useState } from 'react';
-import { Product } from './types';
-import ErrorBoundary from './components/ErrorBoundary';
-import Navbar from './components/Navbar';
-import Categories from './components/Categories';
-import ProductGrid from './components/ProductGrid';
-import Footer from './components/Footer';
-import AdBanner from './components/AdBanner';
-import BrandMall from './components/BrandMall';
-import ProductPage from './components/ProductPage';
-import BrandProductPage from './components/BrandProductPage';
+import { Product, Brand } from './types';
+import ErrorBoundary from './components/common/ErrorBoundary';
+import Navbar from './components/layout/Navbar';
+import Footer from './components/layout/Footer';
+import AdBanner from './components/layout/AdBanner';
+import Categories from './components/features/category/Categories';
+import BrandMall from './components/features/brand/BrandMall';
+import BrandProductPage from './components/features/brand/BrandProductPage';
+import ProductGrid from './components/features/product/ProductGrid';
+import ProductPage from './components/features/product/ProductPage';
 
 function App() {
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
-  const [selectedBrand, setSelectedBrand] = useState<string | null>(null);
+  const [selectedBrand, setSelectedBrand] = useState<Brand | null>(null);
 
   return (
     <ErrorBoundary>

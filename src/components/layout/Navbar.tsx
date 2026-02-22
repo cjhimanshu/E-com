@@ -32,17 +32,14 @@ const Navbar = () => {
 
           {/* Navigation Items */}
           <div className="hidden md:flex items-center space-x-6">
-            {/* Login Dropdown */}
             <div className="relative">
-              <button 
+              <button
                 className="bg-white text-[#2874f0] px-8 py-1.5 font-medium hover:bg-gray-100 transition-colors flex items-center gap-1"
                 onClick={() => setIsLoginOpen(!isLoginOpen)}
               >
                 Login
                 <ChevronDown className="w-4 h-4" />
               </button>
-              
-              {/* Login Dropdown Menu */}
               {isLoginOpen && (
                 <div className="absolute right-0 mt-2 w-72 bg-white rounded-sm shadow-lg py-3 text-sm text-gray-700">
                   <div className="flex px-4 py-3 border-b">
@@ -64,11 +61,9 @@ const Navbar = () => {
                 </div>
               )}
             </div>
-
             <a href="#" className="hover:text-gray-200 font-medium transition-colors flex items-center gap-1">
               Become a Seller
             </a>
-            
             <div className="flex items-center space-x-1 hover:text-gray-200 cursor-pointer group">
               <ShoppingCart className="group-hover:scale-110 transition-transform" />
               <span>Cart</span>
@@ -77,7 +72,7 @@ const Navbar = () => {
 
           {/* Mobile Menu Button */}
           <div className="md:hidden">
-            <button 
+            <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="p-1 hover:bg-blue-600 rounded-sm transition-colors"
             >
@@ -88,7 +83,7 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden pb-4 animate-fade-in">
+          <div className="md:hidden pb-4">
             <div className="flex flex-col space-y-4">
               <div className="relative">
                 <input
